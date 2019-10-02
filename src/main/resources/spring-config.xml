@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="dogBean" class="com.epam.core.intro.xmlConfig.Dog"/>
+  <bean id="catBean" class="com.epam.core.intro.xmlConfig.Cat"/>
+
+  <bean id="houseBean" class="com.epam.core.intro.xmlConfig.House">
+    <constructor-arg name="cat" ref="catBean"/>
+    <constructor-arg name="dog" ref="dogBean"/>
+  </bean>
+
+</beans>
