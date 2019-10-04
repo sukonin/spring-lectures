@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/aop
+  https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <bean class="com.epam.core.lecture_1.example.UserRepository" name="userRepository"/>
+
+  <bean class="com.epam.core.lecture_1.example.UserService" name="userService">
+    <constructor-arg name="userRepository" ref="userRepository"/>
+  </bean>
+
+  <bean class="com.epam.core.lecture_1.example.MetricManager" name="metricManager"/>
+
+  <aop:config>
+    <aop:aspect ref="metricManager">
+      <aop:pointcut id="saveMethod" expression="execution(* *.save(..))"/>
+      <aop:after pointcut-ref="saveMethod" method="logMetric"/>
+    </aop:aspect>
+  </aop:config>
+
+</beans>
