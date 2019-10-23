@@ -1,0 +1,7 @@
+CREATE TABLE USER_T
+(
+id      INT         NOT NULL,
+name    VARCHAR(50) NOT NULL,
+surname VARCHAR(20) NOT NULL
+);
+

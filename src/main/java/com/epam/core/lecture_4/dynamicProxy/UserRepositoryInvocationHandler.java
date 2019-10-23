@@ -16,7 +16,7 @@ public class UserRepositoryInvocationHandler implements InvocationHandler {
   @Override
   public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-    if(method.getName().equals("save")){
+    if(method.getName().equals("update")){
       User user = (User) args[0];
       Objects.requireNonNull(user, "User cannot be null!");
     }

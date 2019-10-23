@@ -10,7 +10,7 @@ public class Main {
     /*ApplicationContext context = new ClassPathXmlApplicationContext("lecture_2/spring-config.xml");
 
     UserService userService = context.getBean(UserService.class);
-    userService.findUserById(1L);*/
+    userService.createUser(1L);*/
 
     AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
         "com.epam.core.lecture_2.dependencyInjection");

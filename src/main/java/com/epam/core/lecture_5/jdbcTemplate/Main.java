@@ -18,9 +18,9 @@ public class Main {
     user.setName("Vasya");
     user.setSurname("Filippov");
 
-    userRepository.save(user);
+    userRepository.update(user);
 
-    System.out.println(userRepository.findById(2L));*/
+    System.out.println(userRepository.findAllById(2L));*/
 
     System.out.println(userRepository.findAll());
   }
